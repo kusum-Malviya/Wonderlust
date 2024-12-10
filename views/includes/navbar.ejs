@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md bg-body-white border-bottom sticky-top">
+  <div class="container-fluid">
+    <div class="navbar-brand navbar-brand-div">
+      <a class="navbar-brand icon" href="/listings">
+        <i class="fa-regular fa-compass"></i>
+      </a>
+      <span class="navbar-nav">
+        <a class="nav-link header-word" href="/listings">Wonderlust</a>
+      </span>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto nav-right-options">
+        <div class="tax-toggle">
+          <div class="form-check-reverse form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label class="form-check-label" for="flexSwitchCheckDefault"
+              >Display total after taxes</label
+            >
+          </div>
+        </div>
+
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+
+        <% if(!currUser){%>
+        <a class="nav-link" href="/signup"><b>Sign up</b></a>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <%}if(currUser){%>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <%}%>
+      </div>
+    </div>
+  </div>
+</nav>

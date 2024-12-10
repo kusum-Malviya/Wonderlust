@@ -1,0 +1,348 @@
+/* body */
+body {
+  font-family: "Plus Jakarta Sans", "sans-serif" !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+}
+
+/* Navbar */
+
+.navbar {
+  height: 5rem !important;
+  background-color: white;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2.5rem;
+}
+
+.navbar-nav .header-word {
+  background: linear-gradient(to left, #fe424d, #e70a71, #7103e6);
+  content: "";
+  color: transparent !important;
+  background-clip: text;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.nav-link {
+  color: #222222 !important;
+}
+
+.nav-right-options {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-evenly;
+}
+.listings {
+  margin-top: 3rem !important;
+}
+
+/* Footer */
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-info {
+  text-align: center;
+}
+.f-info {
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+.f-info-socials {
+  font-size: 1.5rem;
+}
+.f-info-socials i {
+  margin-right: 1rem;
+}
+
+/* card */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+/* Overlay Effect on cards */
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* new.ejs */
+
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* edit.ejs */
+
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  height: 2.5rem !important;
+  width: 5.3rem !important;
+  margin-left: 1rem;
+}
+.deletebtn {
+  background-color: #1c1c1c !important;
+  border: none !important;
+  height: 2.5rem !important;
+  width: 5.3rem !important;
+  margin-left: 1rem;
+}
+
+/* show.ejs */
+
+.show-img {
+  height: 50vh;
+  margin-left: -1rem !important;
+}
+
+.show-listing {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 50rem;
+}
+.show-title {
+  width: 25rem;
+}
+.show-title h2 {
+  width: 26rem !important;
+}
+.card-body-show {
+  width: 25rem;
+  margin-right: 1rem;
+}
+.btns {
+  display: flex;
+}
+
+.show-edit-btn {
+  background-color: #fe424d !important;
+}
+
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tax-info {
+  display: none;
+}
+.tax-toggle {
+  height: 3.2rem;
+  padding: 1.5rem;
+  margin-left: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.335);
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width <= 768px) {
+  .nav-right-options {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.25rem;
+    position: sticky;
+  }
+  .tax-toggle {
+    border: none;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+  }
+  .login-form {
+    width: 100%;
+    align-items: center;
+  }
+  .user-loginfo {
+    width: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .listings {
+    text-align: center;
+  }
+  .card-img-top {
+    height: 15rem !important;
+  }
+  .show-page {
+    text-align: center;
+  }
+  .rating {
+    display: flex !important;
+  }
+  .show-title {
+    text-align: center;
+  }
+  .show-img {
+    height: 15rem !important;
+    margin-left: 0.25rem !important;
+  }
+}
+@media (width <= 840px) {
+  .tax-toggle {
+    text-align: center;
+    width: 20rem;
+    margin-left: 0px;
+  }
+  .nav-right-options a {
+    text-align: center;
+  }
+
+  .show-page {
+    text-align: center;
+    display: flex;
+  }
+  .show-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .show-img {
+    height: 20rem !important;
+    width: 30rem !important;
+    align-self: center !important;
+  }
+
+  .show-listing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50rem;
+  }
+  .show-title {
+    width: 25rem;
+    text-align: start;
+    margin-top: 0px !important;
+  }
+  .card-body-show {
+    width: 25rem;
+    margin-right: 1rem;
+  }
+  .btns {
+    display: flex;
+    width: 26.5rem !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem !important;
+  }
+
+  .show-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .review-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .review-class div {
+    margin: 0px !important;
+    width: 100%;
+    margin-bottom: 1rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btns a,
+  .deletebtn {
+    width: 10rem !important;
+    margin-left: 0rem !important;
+  }
+  .deletebtn {
+    margin-top: 1rem;
+  }
+}
+
+@media (width <= 995px) {
+  .btns {
+    display: flex;
+    justify-content: end;
+    margin-right: 3rem;
+  }
+  .show-title {
+    margin-top: 3.5rem;
+  }
+}
+
+@media (width <=550px) {
+  .show-img {
+    height: 15rem !important;
+    width: 25rem !important;
+    align-self: center !important;
+  }
+}
