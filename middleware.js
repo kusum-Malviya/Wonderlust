@@ -1,7 +1,7 @@
 const Listing = require('./models/listing')
 const Review = require('./models/review.js')
 const ExpressError = require("./utils/ExpressError")
-const {listingSchema,reviewSchema} = require("./Wonderlust/schema.js");             // Require Schema.js file to apply Joi for server side validations
+const {listingSchema,reviewSchema} = require("./schema.js");             // Require Schema.js file to apply Joi for server side validations
 
 
 module.exports.isLoggedIn = (req, res, next) => {

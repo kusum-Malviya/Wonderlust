@@ -17,11 +17,11 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
 //temporary requiring user model
-const User = require("./Wonderlust/models/user.js");
-const reviewRouter = require("./Wonderlust/routes/review.js"); // Requiring review.js(All review routes)
-const listingsRouter = require("./Wonderlust/routes/listing.js"); // Requiring listing.js(All listing routes)
-const userRouter = require("./Wonderlust/routes/user.js"); // Requiring user.js(All user routes)
-const ExpressError = require("./Wonderlust/utils/ExpressError.js"); // Appending ExpressError Class
+const User = require("./models/user.js");
+const reviewRouter = require("./routes/review.js"); // Requiring review.js(All review routes)
+const listingsRouter = require("./routes/listing.js"); // Requiring listing.js(All listing routes)
+const userRouter = require("./routes/user.js"); // Requiring user.js(All user routes)
+const ExpressError = require("./utils/ExpressError.js"); // Appending ExpressError Class
 
 // Connect to MongoDB
 // MongoDB Atlas  ConnectionString
