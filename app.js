@@ -16,12 +16,20 @@ const flash = require("connect-flash"); // Requiring flash package -> display fl
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
+const middleware = require('./middleware');
+
+app.use(middleware.setCurrentUser);
+
 //temporary requiring user model
 const User = require("./models/user.js");
 const reviewRouter = require("./routes/review.js"); // Requiring review.js(All review routes)
 const listingsRouter = require("./routes/listing.js"); // Requiring listing.js(All listing routes)
 const userRouter = require("./routes/user.js"); // Requiring user.js(All user routes)
 const ExpressError = require("./utils/ExpressError.js"); // Appending ExpressError Class
+const contact = require("./models/contact.js");
+const router = require("./routes/contactroute.js");
+const userRoutes = require('./routes/user');
+const bookingRoutes = require('./routes/booking');
 
 // Connect to MongoDB
 // MongoDB Atlas  ConnectionString
@@ -80,7 +88,15 @@ app.use(session(sessionOptions));
 // using the flash
 // 1. Use flash before api routes (q ki flash ko hum routes ke sath use krege)
 app.use(flash());
+app.get("/contact",(req,res)=>{
+  res.render("contact")
+})
 
+app.use(session({
+  secret: 'your-secret',
+  resave: false,
+  saveUninitialized: false,
+}));
 // passport ko hum session ke baad use krege(hame passport ko implement krne ke liye session ki jarurat hoti hai)
 
 // koi bhi request aaye to usme passport ko initialize kr de as a middleware
@@ -101,7 +117,11 @@ app.use((req, res, next) => {
   res.locals.currUser = req.user;
   next();
 });
+app.get("/listing",(req,res)=>{
+  res.render("map")
 
+})
+app.use("/helpline",router)
 // app.get("/demouser",async(req,res) => {
 //     let user1 = new User({
 //         email : "student@gmail.com",
@@ -115,13 +135,17 @@ app.use((req, res, next) => {
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
-app.use("/", userRouter);
+app.use('/', userRoutes);   // User routes
+app.use('/', bookingRoutes); // Booking routes
+
+
 
 // Error Handling Middlewares
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
 });
+
 
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something Going wrong" } = err;

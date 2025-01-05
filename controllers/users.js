@@ -35,6 +35,8 @@ module.exports.login = async(req, res) => {
     res.redirect(redirectUrl);    
 }
 
+
+
 module.exports.logout = (req,res,next) => {
     req.logout((err) => {
         if(err){
@@ -44,3 +46,20 @@ module.exports.logout = (req,res,next) => {
         res.redirect("/listings");
     })
 }
+
+module.exports.checkLoginStatus = (req, res) => {
+    if (req.isAuthenticated()) {
+        res.json({ loggedIn: true });
+    } else {
+        res.json({ loggedIn: false });
+    }
+};
+
+// controllers/users.js
+module.exports.login = async (req, res) => {
+    req.flash('success', 'Welcome back to Wanderlust!');
+    const redirectUrl = req.session.returnTo || '/listings'; // Redirect to saved URL or default
+    delete req.session.returnTo; // Clear the saved URL after redirecting
+    res.redirect(redirectUrl);
+};
+

@@ -22,11 +22,17 @@
         <p class="card-text"><%= listing.country %></p>
         <hr />
       </div>
+      <a href="/booking" > 
+        <button class="btn btn-dark col-1 edit-btn-1 book">Book Now</button>
+      </a>
+      
     </div>
   </div>
 
   <div class="show-content">
     <div class="btns mb-5">
+      
+
       <a href="/listings" class="btn btn-dark col-1 edit-btn back">Back </a
       >&nbsp;&nbsp; <% if(currUser && listing.owner._id.equals(currUser._id)){%>
 
@@ -52,7 +58,7 @@
         novalidate
         class="needs-validation"
       >
-        <div class="mb-3 mt-3 rating">
+        <div class="mb-3 mt-3 rating ">
           <label for="rating" class="form-label">Rating</label>
           <fieldset class="starability-growRotate">
             <input
@@ -120,6 +126,7 @@
 
       <%}%>
 
+  <div class="row"></div>
       <p><b>All Reviews</b></p>
       <div class="row review-class">
         <% for(review of listing.reviews){%>
@@ -140,9 +147,12 @@
             <button class="btn btn-sm btn-dark">Delete</button>
           </form>
         </div>
+        </div>
 
-        <%}%>
+        <% } %>
       </div>
     </div>
+      
   </div>
 </div>
+

@@ -1,6 +1,8 @@
 <%- layout("/layouts/boilerplate.ejs") %>
-
 <!-- <h1>All Listings here</h1> -->
+ <div class="hero-section">
+  <h1>Make Your Trip Amazing with Wonderlust</h1>
+ </div>
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 listings">
   <% for(let listing of allListings ){ %>
   <a href="/listings/<%= listing._id %>" class="listing-link">
@@ -12,6 +14,7 @@
         style="height: 20rem"
       />
       <div class="card-img-overlay"></div>
+      
       <div class="card-body">
         <p class="card-text mt-2">
           <b><%= listing.title %></b><br />

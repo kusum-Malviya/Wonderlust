@@ -20,13 +20,19 @@ module.exports.showListing = async (req, res) => {
       },
     })
     .populate("owner");
+  
   if (!listing) {
     req.flash("error", "Listing Not Exists or Deleted !");
-    res.redirect("/listings");
+    return res.redirect("/listings");
   }
 
-  res.render("listings/show.ejs", { listing });
+  // Pass `isListingPage: true` to the view
+  res.render("listings/show.ejs", {
+    listing,
+    isListingPage: false, // Add this variable
+  });
 };
+
 
 module.exports.createListing = async (req, res, next) => {
   let url = req.file.path;

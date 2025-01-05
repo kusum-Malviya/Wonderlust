@@ -1,0 +1,67 @@
+<%- layout("./layouts/boilerplate.ejs") %>
+<div class="row mt-3 login-form">
+  <div class="col-6 offset-3 mt-3 mb-3 login-head">
+    <h1>Book Now</h1>
+  </div>
+
+  <div class="col-6 offset-3">
+    <form
+      action="/booking"
+      method="POST"
+      class="needs-validation mt-3 mb-3 user-loginfo"
+      novalidate
+    >
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">phone</label>
+        <input
+          type="number"
+          name="phone"
+          id="phone"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="numberOfPerson" class="form-label">Number of person</label>
+        <input
+          type="number"
+          name="numberOfPerson"
+          id="numberOfPerson"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="hotelName" class="form-label">Hotel Name</label>
+        <input
+          type="text"
+          name="hotelName"
+          id="hotelName"
+          class="form-control"
+          required
+        />
+      </div>
+      <button class="btn btn-success login-button">Book Now</button>
+    </form>
+  </div>
+</div>
